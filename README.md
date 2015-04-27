@@ -18,7 +18,7 @@ Currently the class is known to work on Linux, but has been untested on any othe
 Jacob Grunwald
 
 # **Contributors**
-None
+Nathan Carmine, Connor Carlson
 
 # **Open Issues/Bugs**
 None that I know of. 
