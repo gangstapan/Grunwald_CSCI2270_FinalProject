@@ -86,20 +86,26 @@ void llist::push(std::string input) {
         inputNode->previous = sentinel;
     }
     else if(list_type == 3) {
-        node * placer = sentinel->next;
-        while(placer->value.compare(input) < 0 && placer != sentinel) {
-            placer = placer->next;
+        if(entryExists(input) == false) {
+            node * placer = sentinel->next;
+            while(placer->value.compare(input) < 0 && placer != sentinel) {
+                placer = placer->next;
+            }
+            inputNode->previous = placer->previous;
+            placer->previous->next = inputNode;
+            placer->previous = inputNode;
+            inputNode->next = placer;
         }
-        inputNode->previous = placer->previous;
-        placer->previous->next = inputNode;
-        placer->previous = inputNode;
-        inputNode->next = placer;
+        else std::cout<<"Entry already exists. Node not added."<<std::endl;
     }
     else {
-        inputNode->next = sentinel->next;
-        sentinel->next->previous = inputNode;
-        sentinel->next = inputNode;
-        inputNode->previous = sentinel;
+        if(entryExists(input) == false) {
+            inputNode->next = sentinel->next;
+            sentinel->next->previous = inputNode;
+            sentinel->next = inputNode;
+            inputNode->previous = sentinel;
+        }
+        else std::cout<<"Entry already exists. Node not added."<<std::endl;
     }
 }
 
@@ -350,5 +356,20 @@ void llist::deleteMember(std::string deleteValue) {
         searcher->next->previous = searcher->previous;
         delete searcher;
     }
+}
+
+bool llist::entryExists (std::string Value)
+{
+    node * searcher = sentinel->next;
+    bool exists = false;
+    while(searcher->value != Value && searcher != sentinel)
+    {
+        searcher = searcher->next;
+    }
+    if (searcher->value == Value)
+    {
+        exists = true;
+    }
+    return exists;
 }
 

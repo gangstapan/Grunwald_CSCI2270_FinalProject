@@ -24,6 +24,7 @@ class llist
         std::string bottomPeek();
         void deleteList();
         void deleteMember(std::string);
+        bool entryExists (std::string);
     protected:
     private:
         node * sentinel;

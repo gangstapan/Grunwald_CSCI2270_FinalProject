@@ -55,6 +55,10 @@ int main() {
                 cout<<"Enter a string:"<<endl;
                 cin.ignore();
                 getline(cin, stringInput);
+                while (stringInput == "") {
+                    cout<<"Enter a string:"<<endl;
+                    getline(cin, stringInput);
+                }
                 linkedList->push(stringInput);
                 break;
             }
