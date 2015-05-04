@@ -31,4 +31,4 @@ Nathan Carmine, Connor Carlson
 # **Open Issues/Bugs**
 None that I know of. 
 
-I think a could good additions to the class would be a function that randomly pops a node out of the linked list and returns that nodes value. Another addition could be a search function for the class to check if a certain string is in the linked list already. One last thing I can think of for an addition would be a Reverse Alphabetized Priority Queue type for the linked list.
+I think a could good additions to the class would be a function that randomly pops a node out of the linked list and returns that nodes value. One last thing I can think of for an addition would be a Reverse Alphabetized Priority Queue type for the linked list.
